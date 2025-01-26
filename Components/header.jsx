@@ -1,10 +1,11 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { SvgXml } from "react-native-svg";
 import Logo from "../assets/header-logo.js";
 import { LinearGradient } from "expo-linear-gradient";
 import Burger from "../assets/burger.js";
-
+import { useNavigation } from "expo-router";
 export default function Header() {
+  const navigation = useNavigation();
   return (
     <LinearGradient
       colors={["#0B6E4F", "#6BBF59"]}
@@ -20,7 +21,9 @@ export default function Header() {
         SITAG
       </Text>
       <View className="mt-2">
-        <SvgXml xml={Burger} />
+        <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
+          <SvgXml xml={Burger} />
+        </TouchableOpacity>
       </View>
     </LinearGradient>
   );

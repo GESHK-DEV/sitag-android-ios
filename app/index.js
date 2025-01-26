@@ -3,6 +3,7 @@ import { Link } from "expo-router";
 import CardComponent from "../Components/cards.jsx";
 import Header from "../Components/header.jsx";
 import CardMenu from "../Components/cards.jsx";
+import { Button } from "react-native-paper";
 
 export default function Home() {
   return (
