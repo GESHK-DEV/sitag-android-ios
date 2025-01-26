@@ -1,19 +1,23 @@
 import InputText from "./UI/inputs";
 import FillButton from "./UI/button";
+import { useNavigation } from "expo-router";
 import { View, Text } from "react-native";
-
+import { Link } from "expo-router";
 export default function LoginForm() {
   return (
     <View className="mt-9">
       <View className="flex flex-col gap-9">
         <InputText placeholder="Correo" type="email" />
         <InputText placeholder="Contraseña" type="password" />
-        <FillButton
-          text="Iniciar Sesión"
-          Bcolor="#6BBF59"
-          textColor="white"
-          textSize="2xl"
-        />
+        <View className="mx-14">
+          <Link href="/" asChild>
+            <FillButton
+              text="Iniciar Sesión"
+              textColor="white"
+              textSize="2xl"
+            />
+          </Link>
+        </View>
       </View>
       <View className="flex flex-row justify-center gap-1">
         <Text

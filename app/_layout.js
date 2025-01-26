@@ -57,6 +57,10 @@ export default function Layout() {
             name="login"
             options={{ drawerLabel: "Login", title: "Overview" }}
           />
+          <Drawer.Screen
+            name="register"
+            options={{ drawerLabel: "register", title: "Overview" }}
+          />
         </Drawer>
       </GestureHandlerRootView>
     </PaperProvider>
