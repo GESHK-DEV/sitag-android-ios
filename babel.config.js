@@ -7,7 +7,7 @@ module.exports = function (api) {
       "nativewind/babel",
     ], // Usa babel-preset-expo
     plugins: [
-      "expo-router/babel", // Plugin de expo-router
+      "expo-router/babel", "react-native-reanimated/plugin" // Plugin de expo-router
       // Plugin de Nativewind (si lo estás usando)
     ],
   };

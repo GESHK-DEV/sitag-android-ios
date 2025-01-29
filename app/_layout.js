@@ -43,6 +43,8 @@ export default function Layout() {
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="login" options={{ headerShown: false }} />
+        <Stack.Screen name="insFarm" options={{ headerShown: false }} />
+        <Stack.Screen name="dailyActiv" options={{ headerShown: false }} />
       </Stack>
     </View>
   );

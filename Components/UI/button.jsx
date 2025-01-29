@@ -1,8 +1,9 @@
 import { Pressable } from "react-native";
 import { Text, StyleSheet } from "react-native";
-export default function FillButton({ text, textColor, textSize }) {
+
+export default function FillButton({ text, textColor, textSize, onPress }) {
   return (
-    <Pressable className={`bg-[#314D4D] mx-14  px-5 py-4 rounded-lg`}>
+    <Pressable onPress={onPress} className={`bg-[#314D4D] px-5 py-4 rounded-lg`}>
       <Text
         className={`text-${textColor} text-${textSize}  text-center  `}
         style={{ fontFamily: "Roboto_700Bold" }}

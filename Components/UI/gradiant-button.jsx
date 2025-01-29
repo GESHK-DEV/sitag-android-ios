@@ -3,7 +3,7 @@ import { LinearGradient } from "expo-linear-gradient";
 
 export default function GradiantButton({ text }) {
   return (
-    <Pressable className="mx-14 mt-8 px-5 py-4 rounded-2xl">
+    <Pressable className="px-5 py-4 rounded-2xl">
       <LinearGradient
         colors={["#0B6E4F", "#6BBF59"]}
         start={{ x: 0, y: -0.9 }}
