@@ -64,17 +64,21 @@ export default function Layout() {
             options={{ drawerLabel: "register", title: "Overview" }}
           />
           <Drawer.Screen
-<<<<<<< HEAD
             name="summary"
             options={{ drawerLabel: "Summary", title: "Overview" }}
-=======
+          />
+          <Drawer.Screen
             name="insFarm"
             options={{ drawerLabel: "Farm", title: "Overview" }}
           />
           <Drawer.Screen
+            name="drugs"
+            options={{ drawerLabel: "Drugs", title: "Overview" }}
+          />
+
+          <Drawer.Screen
             name="dailyActiv"
             options={{ drawerLabel: "Activity", title: "Overview" }}
->>>>>>> 788f33645ef66df8085587212b9cfd863886bb47
           />
         </Drawer>
       </GestureHandlerRootView>
