@@ -1,9 +1,11 @@
-import { Slot, Stack } from "expo-router";
+import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { View, Text } from "react-native";
+import { PaperProvider } from "react-native-paper";
 import { useFonts } from "expo-font";
-import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
-import { ThemeProvider } from "@react-navigation/native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { Drawer } from "expo-router/drawer";
+
 import * as SplashScreen from "expo-splash-screen";
 import "../global.css"; // Asegúrate de que la ruta sea correcta
 import { useEffect } from "react";
@@ -38,14 +40,37 @@ export default function Layout() {
     return null;
   }
   return (
-    <View style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
+    <PaperProvider>
       <StatusBar style="light" hidden={true} />
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="login" options={{ headerShown: false }} />
-        <Stack.Screen name="insFarm" options={{ headerShown: false }} />
-        <Stack.Screen name="dailyActiv" options={{ headerShown: false }} />
-      </Stack>
-    </View>
+      <GestureHandlerRootView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
+        <Drawer
+          screenOptions={{
+            headerShown: false, // Oculta el header predeterminado
+            drawerPosition: "right", // Drawer se abre de derecha a izquierda
+          }}
+        >
+          <Drawer.Screen
+            name="index"
+            options={{ drawerLabel: "Home", title: "Overview" }}
+          />
+          <Drawer.Screen
+            name="login"
+            options={{ drawerLabel: "Login", title: "Overview" }}
+          />
+          <Drawer.Screen
+            name="register"
+            options={{ drawerLabel: "register", title: "Overview" }}
+          />
+          <Drawer.Screen
+            name="insFarm"
+            options={{ drawerLabel: "Farm", title: "Overview" }}
+          />
+          <Drawer.Screen
+            name="dailyActiv"
+            options={{ drawerLabel: "Activity", title: "Overview" }}
+          />
+        </Drawer>
+      </GestureHandlerRootView>
+    </PaperProvider>
   );
 }

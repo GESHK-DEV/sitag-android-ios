@@ -52,7 +52,7 @@ export default function CardMenu() {
       </View>
 
       {/* card de inspeccionar fincas */}
-      <Link href="dailyActiv">
+      <Link href="insFarm">
       <View className="flex flex-col justify-center items-center border-2 p-4 rounded-xl border-[#126260]">
         <IconsLibrary
           IconComponent={MaterialCommunityIcons}
