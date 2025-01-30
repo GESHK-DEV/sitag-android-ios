@@ -15,18 +15,20 @@ import {
   Roboto_700Bold,
   Roboto_500Medium,
 } from "@expo-google-fonts/roboto";
+import { Jua_400Regular } from "@expo-google-fonts/jua";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function Layout() {
   const [loaded, error] = useFonts({
-    "Charlie-display": require("../assets/fonts/charlie-display.ttf"),
-    "Charlie-display-3": require("../assets/fonts/charlie-display-3.ttf"),
-    "Charlie-display-semibold": require("../assets/fonts/charlie-display-semibold.ttf"),
-    "Charlie-display-bold": require("../assets/fonts/charlie-display-bold.ttf"),
+    "CharlieDisplay-Black": require("../assets/fonts/charlie-display.ttf"),
+    "CharlieDisplay-Regular": require("../assets/fonts/charlie-display-3.ttf"),
+    "CharlieDisplay-Semibold": require("../assets/fonts/charlie-display-semibold.ttf"),
+    "CharlieDisplay-Bold": require("../assets/fonts/charlie-display-bold.ttf"),
     Roboto_900Black,
     Roboto_400Regular,
     Roboto_700Bold,
+    Jua_400Regular,
     Roboto_500Medium,
   });
 
@@ -60,6 +62,23 @@ export default function Layout() {
           <Drawer.Screen
             name="register"
             options={{ drawerLabel: "register", title: "Overview" }}
+          />
+          <Drawer.Screen
+            name="summary"
+            options={{ drawerLabel: "Summary", title: "Overview" }}
+          />
+          <Drawer.Screen
+            name="insFarm"
+            options={{ drawerLabel: "Farm", title: "Overview" }}
+          />
+          <Drawer.Screen
+            name="drugs"
+            options={{ drawerLabel: "Drugs", title: "Overview" }}
+          />
+
+          <Drawer.Screen
+            name="dailyActiv"
+            options={{ drawerLabel: "Activity", title: "Overview" }}
           />
         </Drawer>
       </GestureHandlerRootView>
