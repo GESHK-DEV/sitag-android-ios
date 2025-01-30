@@ -61,16 +61,9 @@ export default function Layout() {
             name="register"
             options={{ drawerLabel: "register", title: "Overview" }}
           />
-          <Drawer.Screen
-            name="insFarm"
-            options={{ drawerLabel: "Farm", title: "Overview" }}
-          />
-          <Drawer.Screen
-            name="dailyActiv"
-            options={{ drawerLabel: "Activity", title: "Overview" }}
-          />
         </Drawer>
       </GestureHandlerRootView>
     </PaperProvider>
+
   );
 }
