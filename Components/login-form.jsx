@@ -5,7 +5,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage"; // Importa
 import InputText from "./UI/inputs";
 import FillButton from "./UI/button";
 import { loginUser } from "../Services/API/auth";
-import { CardActivity } from "./cards";
+
 export default function LoginForm() {
   {
     /* Esto es para la validacion del login, NO BORRAR*/
@@ -90,7 +90,6 @@ export default function LoginForm() {
           Crear Una
         </Text>
       </View>
-      <CardActivity />
     </View>
   );
 }

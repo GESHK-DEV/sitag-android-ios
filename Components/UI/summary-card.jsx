@@ -1,5 +1,6 @@
 import { Pressable, Text, View, StyleSheet } from "react-native";
-
+import { SvgXml } from "react-native-svg";
+import redirect from "../../assets/redirect.js";
 export default function SumaryCard() {
   return (
     <View style={styles.card} className="mx-6">
@@ -32,9 +33,11 @@ export default function SumaryCard() {
 }
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: "#D8FDB3",
+    backgroundColor: "#BFE38D",
     borderRadius: 24,
-    padding: 20,
+    paddingTop: 5,
+
+    paddingInline: 20,
 
     position: "relative",
     overflow: "hidden",
@@ -54,7 +57,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     borderRadius: 100,
-    backgroundColor: "#C5F099",
+    backgroundColor: "#B3D880",
     opacity: 0.7,
   },
   title: {
@@ -90,3 +93,21 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 });
+
+export function SimpleCard({ text }) {
+  return (
+    <View style={styles.card}>
+      <View style={styles.backgroundCircle} />
+      <View className="flex flex-row justify-end items-center">
+        <SvgXml xml={redirect} />
+      </View>
+
+      <Text
+        className=" text-center text-4xl pt-5 pb-14 text-[#1C5754]"
+        style={{ fontFamily: "CharlieDisplay-Bold" }}
+      >
+        {text}
+      </Text>
+    </View>
+  );
+}
