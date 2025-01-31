@@ -4,6 +4,7 @@ import Logo from "../assets/header-logo.js";
 import { LinearGradient } from "expo-linear-gradient";
 import Burger from "../assets/burger.js";
 import { useNavigation } from "expo-router";
+
 export default function Header() {
   const navigation = useNavigation();
   return (

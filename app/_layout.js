@@ -44,7 +44,7 @@ export default function Layout() {
   return (
     <PaperProvider>
       <StatusBar style="light" hidden={true} />
-      <GestureHandlerRootView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
+      <GestureHandlerRootView style={{ flex: 1, backgroundColor: "#F8672E" }}>
         <Drawer
           screenOptions={{
             headerShown: false, // Oculta el header predeterminado
@@ -72,6 +72,10 @@ export default function Layout() {
             options={{ drawerLabel: "Farm", title: "Overview" }}
           />
           <Drawer.Screen
+            name="finance"
+            options={{ drawerLabel: "Finance", title: "Overview" }}
+          />
+          <Drawer.Screen
             name="drugs"
             options={{ drawerLabel: "Drugs", title: "Overview" }}
           />
@@ -83,6 +87,5 @@ export default function Layout() {
         </Drawer>
       </GestureHandlerRootView>
     </PaperProvider>
-
   );
 }
