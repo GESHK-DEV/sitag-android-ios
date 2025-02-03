@@ -6,7 +6,7 @@ import {
   Modal,
   Pressable,
   Animated,
-  TouchableOpacity
+  TouchableOpacity,
 } from "react-native";
 import FillButton from "./UI/button";
 import GradiantButton from "./UI/gradiant-button";
@@ -16,7 +16,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { SvgXml } from "react-native-svg";
-import Location from "../assets/location"
+import Location from "../assets/location";
 import animals from "../assets/animals";
 import InputText from "./UI/inputs";
 import { Link } from "expo-router";
@@ -48,21 +48,23 @@ export default function CardMenu() {
       </Link>
 
       {/* card de ver finanzas */}
-      <View className="flex flex-col justify-center items-center border-2 py-4 px-12 rounded-xl border-[#126260]">
-        <IconsLibrary
-          IconComponent={MaterialCommunityIcons}
-          iconColor="#126260"
-          iconSize={83}
-          iconName="finance"
-        />
+      <Link href="finance">
+        <View className="flex flex-col justify-center items-center border-2 py-4 px-12 rounded-xl border-[#126260]">
+          <IconsLibrary
+            IconComponent={MaterialCommunityIcons}
+            iconColor="#126260"
+            iconSize={83}
+            iconName="finance"
+          />
 
-        <Text
-          style={{ fontFamily: "Roboto_700Bold" }}
-          className="text-xl text-gray-600"
-        >
-          Ver Finanzas
-        </Text>
-      </View>
+          <Text
+            style={{ fontFamily: "Roboto_700Bold" }}
+            className="text-xl text-gray-600"
+          >
+            Ver Finanzas
+          </Text>
+        </View>
+      </Link>
 
       {/* card de inspeccionar fincas */}
       <Link href="insFarm">
@@ -89,36 +91,34 @@ export function CardFarm() {
   return (
     <View>
       <Link href="divisions" asChild>
-      <TouchableOpacity activeOpacity={0.9}>
-      <View
-        className="mx-12 rounded-xl overflow-hidden">
+        <TouchableOpacity activeOpacity={0.9}>
+          <View className="mx-12 rounded-xl overflow-hidden">
+            <LinearGradient
+              colors={["#0B6E4F", "#6BBF59"]}
+              start={{ x: 0, y: -0.9 }}
+              end={{ x: 0, y: 1 }}
+              className="flex flex-row items-center py-9 px-6"
+            >
+              <View className="flex-1">
+                <Text
+                  style={{ fontFamily: "Roboto_700Bold" }}
+                  className="text-2xl text-white"
+                >
+                  Cordillera
+                </Text>
+                <Text
+                  style={{ fontFamily: "Roboto_700" }}
+                  className="text-sm text-white mt-1"
+                >
+                  3 Divisiones
+                </Text>
+              </View>
 
-        <LinearGradient
-          colors={["#0B6E4F", "#6BBF59"]}
-          start={{ x: 0, y: -0.9 }}
-          end={{ x: 0, y: 1 }}
-          className="flex flex-row items-center py-9 px-6"
-        >
-          <View className="flex-1">
-            <Text
-              style={{ fontFamily: "Roboto_700Bold" }}
-              className="text-2xl text-white"
-            >
-              Cordillera
-            </Text>
-            <Text
-              style={{ fontFamily: "Roboto_700" }}
-              className="text-sm text-white mt-1"
-            >
-              3 Divisiones
-            </Text>
+              <SvgXml xml={Location} width={60} height={60} />
+            </LinearGradient>
           </View>
-
-          <SvgXml xml={Location} width={60} height={60} />
-        </LinearGradient>
-    </View>
-    </TouchableOpacity>
-    </Link>
+        </TouchableOpacity>
+      </Link>
 
       <View className="mx-12 rounded-xl overflow-hidden mt-6">
         <LinearGradient
@@ -332,96 +332,102 @@ export function AggCardActivity() {
 
 export function CardDivisions() {
   return (
-
-<View className="flex flex-wrap flex-row justify-start gap-4 ml-6">
-
-  <View className="w-[45%] rounded-xl overflow-hidden">
-    <LinearGradient
-      colors={["#0B6E4F", "#6BBF59"]}
-      start={{ x: 0, y: -0.9 }}
-      end={{ x: 0, y: 1 }}
-      className="flex flex-row items-center py-9 px-6">
-      <View className="flex-1">
-        <Text
-          style={{ fontFamily: "Roboto_700Bold" }}
-          className="text-2xl text-white">
-          Selva
-        </Text>
-        <Text
-          style={{ fontFamily: "Roboto_700" }}
-          className="text-sm text-white mt-1">
-          10 animales
-        </Text>
+    <View className="flex flex-wrap flex-row justify-start gap-4 ml-6">
+      <View className="w-[45%] rounded-xl overflow-hidden">
+        <LinearGradient
+          colors={["#0B6E4F", "#6BBF59"]}
+          start={{ x: 0, y: -0.9 }}
+          end={{ x: 0, y: 1 }}
+          className="flex flex-row items-center py-9 px-6"
+        >
+          <View className="flex-1">
+            <Text
+              style={{ fontFamily: "Roboto_700Bold" }}
+              className="text-2xl text-white"
+            >
+              Selva
+            </Text>
+            <Text
+              style={{ fontFamily: "Roboto_700" }}
+              className="text-sm text-white mt-1"
+            >
+              10 animales
+            </Text>
+          </View>
+          <IconsLibrary
+            IconComponent={MaterialCommunityIcons}
+            iconColor="#FFFFFF"
+            iconSize={50}
+            iconName="map"
+          />
+        </LinearGradient>
       </View>
-      <IconsLibrary
-        IconComponent={MaterialCommunityIcons}
-        iconColor="#FFFFFF"
-        iconSize={50}
-        iconName="map"
-      />
-    </LinearGradient>
-  </View>
 
-  <View className="w-[45%] rounded-xl overflow-hidden">
-    <LinearGradient
-      colors={["#0B6E4F", "#6BBF59"]}
-      start={{ x: 0, y: -0.9 }}
-      end={{ x: 0, y: 1 }}
-      className="flex flex-row items-center py-9 px-6">
-      <View className="flex-1">
-        <Text
-          style={{ fontFamily: "Roboto_700Bold" }}
-          className="text-2xl text-white">
-          Pradera
-        </Text>
-        <Text
-          style={{ fontFamily: "Roboto_700" }}
-          className="text-sm text-white mt-1">
-          10 animales
-        </Text>
+      <View className="w-[45%] rounded-xl overflow-hidden">
+        <LinearGradient
+          colors={["#0B6E4F", "#6BBF59"]}
+          start={{ x: 0, y: -0.9 }}
+          end={{ x: 0, y: 1 }}
+          className="flex flex-row items-center py-9 px-6"
+        >
+          <View className="flex-1">
+            <Text
+              style={{ fontFamily: "Roboto_700Bold" }}
+              className="text-2xl text-white"
+            >
+              Pradera
+            </Text>
+            <Text
+              style={{ fontFamily: "Roboto_700" }}
+              className="text-sm text-white mt-1"
+            >
+              10 animales
+            </Text>
+          </View>
+          <IconsLibrary
+            IconComponent={MaterialCommunityIcons}
+            iconColor="#FFFFFF"
+            iconSize={50}
+            iconName="map"
+          />
+        </LinearGradient>
       </View>
-      <IconsLibrary
-        IconComponent={MaterialCommunityIcons}
-        iconColor="#FFFFFF"
-        iconSize={50}
-        iconName="map"
-      />
-    </LinearGradient>
-  </View>
 
-  <View className="w-[45%] rounded-xl overflow-hidden">
-    <LinearGradient
-      colors={["#0B6E4F", "#6BBF59"]}
-      start={{ x: 0, y: -0.9 }}
-      end={{ x: 0, y: 1 }}
-      className="flex flex-row items-center py-9 px-6">
-      <View className="flex-1">
-        <Text
-          style={{ fontFamily: "Roboto_700Bold" }}
-          className="text-2xl text-white">
-          Arroyo
-        </Text>
-        <Text
-          style={{ fontFamily: "Roboto_700" }}
-          className="text-sm text-white mt-1">
-          10 animales
-        </Text>
+      <View className="w-[45%] rounded-xl overflow-hidden">
+        <LinearGradient
+          colors={["#0B6E4F", "#6BBF59"]}
+          start={{ x: 0, y: -0.9 }}
+          end={{ x: 0, y: 1 }}
+          className="flex flex-row items-center py-9 px-6"
+        >
+          <View className="flex-1">
+            <Text
+              style={{ fontFamily: "Roboto_700Bold" }}
+              className="text-2xl text-white"
+            >
+              Arroyo
+            </Text>
+            <Text
+              style={{ fontFamily: "Roboto_700" }}
+              className="text-sm text-white mt-1"
+            >
+              10 animales
+            </Text>
+          </View>
+          <IconsLibrary
+            IconComponent={MaterialCommunityIcons}
+            iconColor="#FFFFFF"
+            iconSize={50}
+            iconName="map"
+          />
+        </LinearGradient>
       </View>
-      <IconsLibrary
-        IconComponent={MaterialCommunityIcons}
-        iconColor="#FFFFFF"
-        iconSize={50}
-        iconName="map"
-      />
-    </LinearGradient>
-  </View>
 
-  <View className="w-[45%] rounded-xl overflow-hidden">
-  <AggCardDivisions/>
-  </View>
-
-</View>
-  )
+      <View className="w-[45%] rounded-xl overflow-hidden">
+        <AggCardDivisions />
+      </View>
+    </View>
+  );
 }
 
 export function AggCardDivisions() {
@@ -431,11 +437,8 @@ export function AggCardDivisions() {
   };
   return (
     <View>
-    <Pressable 
-        onPress={() =>
-          setModalVisible(!modalVisible)}>
-      <View
-        className="rounded-xl py-8 px-18 border-2 overflow-hidden border-[#126260]">
+      <Pressable onPress={() => setModalVisible(!modalVisible)}>
+        <View className="rounded-xl py-8 px-18 border-2 overflow-hidden border-[#126260]">
           <View className="flex flex-col justify-center items-center">
             <IconsLibrary
               IconComponent={MaterialCommunityIcons}
@@ -444,183 +447,187 @@ export function AggCardDivisions() {
               iconName="plus"
             />
           </View>
-      </View>
+        </View>
+      </Pressable>
 
-  </Pressable>
-
-    <Modal
-      animationType="slide"
-      transparent={true}
-      visible={modalVisible}
-      onRequestClose={closeModal}>
-      <View className="flex-1 px-8 py-8 justify-center items-center bg-black/50">
-        <View className="bg-white w-full rounded-lg border-2 border-[#126260]">
-          <Text
-            style={{ fontFamily: "Roboto_900Black" }}
-            className="text-center text-[#314D4D] text-2xl mt-4 mb-4">
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={closeModal}
+      >
+        <View className="flex-1 px-8 py-8 justify-center items-center bg-black/50">
+          <View className="bg-white w-full rounded-lg border-2 border-[#126260]">
+            <Text
+              style={{ fontFamily: "Roboto_900Black" }}
+              className="text-center text-[#314D4D] text-2xl mt-4 mb-4"
+            >
               Ponle un nombre a tu división
-          </Text>
+            </Text>
 
-        <View className="w-full"> 
-            <InputText placeholder="Nombre de la división" type="text" />
-        </View>
+            <View className="w-full">
+              <InputText placeholder="Nombre de la división" type="text" />
+            </View>
 
-        <View className="flex flex-row justify-center items-center mr-4">
-        <GradiantButton
-            text="Aceptar"/>
-            
-            <FillButton
-              text="Cancelar"
-              Bcolor="#6BBF59"
-              textColor="white"
-              textSize="xl"
-              onPress={closeModal}/>
+            <View className="flex flex-row justify-center items-center mr-4">
+              <GradiantButton text="Aceptar" />
 
+              <FillButton
+                text="Cancelar"
+                Bcolor="#6BBF59"
+                textColor="white"
+                textSize="xl"
+                onPress={closeModal}
+              />
+            </View>
+          </View>
         </View>
-        </View>
-      </View>
-    </Modal>
-  </View>
-  )
+      </Modal>
+    </View>
+  );
 }
 
 export function CardAdminDiv() {
   return (
     <View>
       <Link href="animals" asChild>
-      <TouchableOpacity activeOpacity={0.9}>
-      <View
-      className="mx-20 rounded-xl overflow-hidden mt-6">
-      <LinearGradient
-        colors={["#71C9C7", "#25C8C4"]}
-        start={{ x: 0, y: -0.9 }}
-        end={{ x: 0, y: 1 }}
-        className="flex flex-row items-center py-9 px-6"
-      >
-        <View className="flex-1">
-          <Text
-            style={{ fontFamily: "Roboto_700Bold" }}
-            className="text-2xl text-white">
-              Consultar animales
-          </Text>
-        </View>
+        <TouchableOpacity activeOpacity={0.9}>
+          <View className="mx-20 rounded-xl overflow-hidden mt-6">
+            <LinearGradient
+              colors={["#71C9C7", "#25C8C4"]}
+              start={{ x: 0, y: -0.9 }}
+              end={{ x: 0, y: 1 }}
+              className="flex flex-row items-center py-9 px-6"
+            >
+              <View className="flex-1">
+                <Text
+                  style={{ fontFamily: "Roboto_700Bold" }}
+                  className="text-2xl text-white"
+                >
+                  Consultar animales
+                </Text>
+              </View>
 
-        <SvgXml xml={animals} width={80} height={80} />
-      </LinearGradient>
-    </View>
-    </TouchableOpacity>
-    </Link>
+              <SvgXml xml={animals} width={80} height={80} />
+            </LinearGradient>
+          </View>
+        </TouchableOpacity>
+      </Link>
 
-    <Link href="dailyActiv" asChild>
-      <TouchableOpacity activeOpacity={0.9}>
-    <View
-      className="mx-20 rounded-xl overflow-hidden mt-10">
-      <LinearGradient
-        colors={["#0B6E4F", "#6BBF59"]}
-        start={{ x: 0, y: -0.9 }}
-        end={{ x: 0, y: 1 }}
-        className="flex flex-row items-center py-9 px-6"
-      >
-        <View className="flex-1">
-          <Text
-            style={{ fontFamily: "Roboto_700Bold" }}
-            className="text-2xl text-white">
-              Ver Actividades
-          </Text>
-        </View>
+      <Link href="dailyActiv" asChild>
+        <TouchableOpacity activeOpacity={0.9}>
+          <View className="mx-20 rounded-xl overflow-hidden mt-10">
+            <LinearGradient
+              colors={["#0B6E4F", "#6BBF59"]}
+              start={{ x: 0, y: -0.9 }}
+              end={{ x: 0, y: 1 }}
+              className="flex flex-row items-center py-9 px-6"
+            >
+              <View className="flex-1">
+                <Text
+                  style={{ fontFamily: "Roboto_700Bold" }}
+                  className="text-2xl text-white"
+                >
+                  Ver Actividades
+                </Text>
+              </View>
 
-        <IconsLibrary
-              IconComponent={MaterialCommunityIcons}
-              iconColor="#FFFFFF"
-              iconSize={80}
-              iconName="view-dashboard-edit"
-            />
-      </LinearGradient>
+              <IconsLibrary
+                IconComponent={MaterialCommunityIcons}
+                iconColor="#FFFFFF"
+                iconSize={80}
+                iconName="view-dashboard-edit"
+              />
+            </LinearGradient>
+          </View>
+        </TouchableOpacity>
+      </Link>
     </View>
-    </TouchableOpacity>
-    </Link>
-    </View>
-  )
+  );
 }
 
 export function CardAnimal() {
   return (
     <View>
       <View className="flex flex-wrap flex-row justify-start gap-4 ml-6">
+        <View className="w-[45%] rounded-3xl overflow-hidden">
+          <LinearGradient
+            colors={["#0B6E4F", "#6BBF59"]}
+            start={{ x: 0, y: -0.9 }}
+            end={{ x: 0, y: 1 }}
+            className="flex flex-row items-center py-9 px-6"
+          >
+            <View className="flex-1">
+              <Text
+                style={{ fontFamily: "Roboto_700Bold" }}
+                className="text-2xl text-white"
+              >
+                ID: 39
+              </Text>
+            </View>
+            <IconsLibrary
+              IconComponent={MaterialCommunityIcons}
+              iconColor="#FFFFFF"
+              iconSize={50}
+              iconName="cow"
+            />
+          </LinearGradient>
+        </View>
 
-<View className="w-[45%] rounded-3xl overflow-hidden">
-  <LinearGradient
-    colors={["#0B6E4F", "#6BBF59"]}
-    start={{ x: 0, y: -0.9 }}
-    end={{ x: 0, y: 1 }}
-    className="flex flex-row items-center py-9 px-6">
-    <View className="flex-1">
-      <Text
-        style={{ fontFamily: "Roboto_700Bold" }}
-        className="text-2xl text-white">
-        ID: 39
-      </Text>
+        <View className="w-[45%] rounded-xl overflow-hidden">
+          <LinearGradient
+            colors={["#0B6E4F", "#6BBF59"]}
+            start={{ x: 0, y: -0.9 }}
+            end={{ x: 0, y: 1 }}
+            className="flex flex-row items-center py-9 px-6"
+          >
+            <View className="flex-1">
+              <Text
+                style={{ fontFamily: "Roboto_700Bold" }}
+                className="text-2xl text-white"
+              >
+                ID: 38
+              </Text>
+            </View>
+            <IconsLibrary
+              IconComponent={MaterialCommunityIcons}
+              iconColor="#FFFFFF"
+              iconSize={50}
+              iconName="cow"
+            />
+          </LinearGradient>
+        </View>
+
+        <View className="w-[45%] rounded-xl overflow-hidden">
+          <LinearGradient
+            colors={["#0B6E4F", "#6BBF59"]}
+            start={{ x: 0, y: -0.9 }}
+            end={{ x: 0, y: 1 }}
+            className="flex flex-row items-center py-9 px-6"
+          >
+            <View className="flex-1">
+              <Text
+                style={{ fontFamily: "Roboto_700Bold" }}
+                className="text-2xl text-white"
+              >
+                ID: 37
+              </Text>
+            </View>
+            <IconsLibrary
+              IconComponent={MaterialCommunityIcons}
+              iconColor="#FFFFFF"
+              iconSize={50}
+              iconName="cow"
+            />
+          </LinearGradient>
+        </View>
+
+        <View className="w-[45%] rounded-xl overflow-hidden">
+          <AggCardAnimal />
+        </View>
+      </View>
     </View>
-    <IconsLibrary
-      IconComponent={MaterialCommunityIcons}
-      iconColor="#FFFFFF"
-      iconSize={50}
-      iconName="cow"
-    />
-  </LinearGradient>
-</View>
-
-<View className="w-[45%] rounded-xl overflow-hidden">
-  <LinearGradient
-    colors={["#0B6E4F", "#6BBF59"]}
-    start={{ x: 0, y: -0.9 }}
-    end={{ x: 0, y: 1 }}
-    className="flex flex-row items-center py-9 px-6">
-    <View className="flex-1">
-      <Text
-        style={{ fontFamily: "Roboto_700Bold" }}
-        className="text-2xl text-white">
-        ID: 38
-      </Text>
-    </View>
-    <IconsLibrary
-      IconComponent={MaterialCommunityIcons}
-      iconColor="#FFFFFF"
-      iconSize={50}
-      iconName="cow"
-    />
-  </LinearGradient>
-</View>
-
-<View className="w-[45%] rounded-xl overflow-hidden">
-  <LinearGradient
-    colors={["#0B6E4F", "#6BBF59"]}
-    start={{ x: 0, y: -0.9 }}
-    end={{ x: 0, y: 1 }}
-    className="flex flex-row items-center py-9 px-6">
-    <View className="flex-1">
-      <Text
-        style={{ fontFamily: "Roboto_700Bold" }}
-        className="text-2xl text-white">
-        ID: 37
-      </Text>
-    </View>
-    <IconsLibrary
-      IconComponent={MaterialCommunityIcons}
-      iconColor="#FFFFFF"
-      iconSize={50}
-      iconName="cow"
-    />
-  </LinearGradient>
-</View>
-
-<View className="w-[45%] rounded-xl overflow-hidden">
-<AggCardAnimal/>
-</View>
-
-</View>
-    </View>
-  )
+  );
 }
 
 export function AggCardAnimal() {
@@ -628,13 +635,10 @@ export function AggCardAnimal() {
   const closeModal = () => {
     setModalVisible(false);
   };
-  return(
-  <View>
-    <Pressable 
-        onPress={() =>
-          setModalVisible(!modalVisible)}>
-      <View
-        className="rounded-xl py-8 px-18 border-2 overflow-hidden border-[#126260]">
+  return (
+    <View>
+      <Pressable onPress={() => setModalVisible(!modalVisible)}>
+        <View className="rounded-xl py-8 px-18 border-2 overflow-hidden border-[#126260]">
           <View className="flex flex-col justify-center items-center">
             <IconsLibrary
               IconComponent={MaterialCommunityIcons}

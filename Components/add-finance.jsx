@@ -13,6 +13,13 @@ export default function AddFinance() {
     { label: "Gio", value: "Gio" },
     { label: "Geshk", value: "Geshk" },
   ]);
+
+  const [open2, setOpen2] = useState(false);
+  const [value2, setValue2] = useState(null);
+  const [items2, setItems2] = useState([
+    { label: "Gio", value: "Gio" },
+    { label: "Geshk", value: "Geshk" },
+  ]);
   return (
     <View>
       <TransactionHeader />
@@ -54,19 +61,19 @@ export default function AddFinance() {
       </View>
       <View className="flex flex-col mx-12 mt-7 gap-4">
         <Text
-          className="text-2xl"
+          className="text-2xl mt-5"
           style={{ fontFamily: "CharlieDisplay-Bold" }}
         >
           Para:
         </Text>
         <DropDownPicker
-          open={open}
+          open={open2}
           className="border-transparent"
-          value={value}
-          items={items}
-          setOpen={setOpen}
-          setValue={setValue}
-          setItems={setItems}
+          value={value2}
+          items={items2}
+          setOpen={setOpen2}
+          setValue={setValue2}
+          setItems={setItems2}
           placeholder="Selecciona una cuenta"
         />
       </View>

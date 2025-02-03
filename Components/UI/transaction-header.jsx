@@ -1,5 +1,6 @@
 import { LinearGradient } from "expo-linear-gradient";
 import { View, Text, StyleSheet, Pressable } from "react-native";
+import { Link } from "expo-router";
 import IconsLibrary from "./icons-library";
 import AntDesign from "@expo/vector-icons/AntDesign";
 export default function TransactionHeader() {
@@ -12,12 +13,14 @@ export default function TransactionHeader() {
       className="flex flex-col  "
     >
       <View className="flex flex-row mt-10 gap-5 pb-5 mx-6">
-        <IconsLibrary
-          IconComponent={AntDesign}
-          iconName="left"
-          iconSize={33}
-          iconColor="#fff"
-        />
+        <Link href="finance">
+          <IconsLibrary
+            IconComponent={AntDesign}
+            iconName="left"
+            iconSize={33}
+            iconColor="#fff"
+          />
+        </Link>
         <Text
           className=" text-white text-3xl"
           style={{ fontFamily: "Roboto_900Black" }}
