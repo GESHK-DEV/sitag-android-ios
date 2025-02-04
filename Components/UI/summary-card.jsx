@@ -5,14 +5,17 @@ export default function SumaryCard() {
   return (
     <View style={styles.card} className="mx-6">
       <View style={styles.backgroundCircle} />
-      <Text style={[styles.title, { fontFamily: "CharlieDisplay-Bold" }]}>
+      <Text
+        style={[styles.title, { fontFamily: "CharlieDisplay-Bold" }]}
+        className="mt-5 "
+      >
         Aquí tus Ganancias!
       </Text>
       <Text style={[styles.amount, { fontFamily: "CharlieDisplay-Black" }]}>
         $510.50
       </Text>
       <View style={styles.bottomContainer}>
-        <View style={styles.percentageContainer}>
+        <View style={styles.percentageContainer} className="mb-5">
           <Text
             style={[
               styles.percentageText,
@@ -24,6 +27,7 @@ export default function SumaryCard() {
         </View>
         <Text
           style={[styles.comparisonText, { fontFamily: "CharlieDisplay-Bold" }]}
+          className="mb-5"
         >
           que el mes pasado
         </Text>

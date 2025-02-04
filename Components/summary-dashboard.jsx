@@ -23,19 +23,6 @@ export default function SummaryDashboard() {
           descripcion="Gatos este Mes"
         />
       </View>
-      <View className="flex flex-col gap-5">
-        <Text
-          className="text-3xl text-center text-[#6D5426]"
-          style={{ fontFamily: "Roboto_900Black" }}
-        >
-          Actividades de Hoy
-        </Text>
-        <CardActivity />
-        <CardActivity />
-        <CardActivity />
-        <CardActivity />
-        <CardActivity />
-      </View>
     </View>
   );
 }

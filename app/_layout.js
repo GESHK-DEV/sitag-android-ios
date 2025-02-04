@@ -63,10 +63,7 @@ export default function Layout() {
             name="register"
             options={{ drawerLabel: "register", title: "Overview" }}
           />
-          <Drawer.Screen
-            name="summary"
-            options={{ drawerLabel: "Summary", title: "Overview" }}
-          />
+
           <Drawer.Screen
             name="insFarm"
             options={{ drawerLabel: "Farm", title: "Overview" }}

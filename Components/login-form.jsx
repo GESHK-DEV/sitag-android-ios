@@ -58,21 +58,21 @@ export default function LoginForm() {
         <InputText
           placeholder="Correo"
           type="email"
-          onChangeText={setEmail}
-          value={email}
+          // onChangeText={setEmail}
+          // value={email}
         />
         <InputText
           placeholder="Contraseña"
           type="password"
-          onChangeText={setPassword}
-          value={password}
+          // onChangeText={setPassword}
+          //value={password}
         />
         <View className="mx-14">
           <FillButton
             text="Iniciar Sesión"
             textColor="white"
             textSize="2xl"
-            onPress={handleLogin}
+            // onPress={handleLogin}
           />
         </View>
       </View>
