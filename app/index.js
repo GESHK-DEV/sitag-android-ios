@@ -36,7 +36,7 @@ export default function Home() {
 */
   }
   return (
-    <ScrollView>
+    <ScrollView className="bg-white flex-1">
       <View>
         <Header />
         <Text
@@ -56,11 +56,13 @@ export default function Home() {
           >
             Actividades de Hoy
           </Text>
-          <CardActivity />
-          <CardActivity />
-          <CardActivity />
-          <CardActivity />
-          <CardActivity />
+          <View className="flex flex-col gap-5 mx-20">
+            <CardActivity />
+            <CardActivity />
+            <CardActivity />
+            <CardActivity />
+            <CardActivity />
+          </View>
         </View>
       </View>
     </ScrollView>
