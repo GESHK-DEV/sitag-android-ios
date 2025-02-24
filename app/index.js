@@ -9,6 +9,10 @@ import SummaryDashboard from "../Components/summary-dashboard";
 import { Button } from "react-native-paper";
 import { useEffect, useState } from "react";
 export default function Home() {
+
+  {/*Variable para probar ocultar el registro si no hay*/}
+  const [data, setData] = useState([]);
+
   {
     /* Esto es para obtener datos de la cache, NO BORRAR*/
   }
@@ -46,7 +50,21 @@ export default function Home() {
           Bienvenido, Que le Gustaria Hacer
           {/*key ? `User Key :${key}` : "No hay key"*/}
         </Text>
-        <SummaryDashboard />
+
+        {
+        /* Para mostrar los Dashboard o el mensaje */
+        }
+
+        {data.length > 0 ? (
+          <SummaryDashboard />
+        ) : (
+          <Text 
+          className="text-center text-[#314D4D] text-2xl mt-10"
+          style={{ fontFamily: "Roboto_900Black" }}
+          >
+            No hay ganancias registradas
+          </Text>
+        )} 
 
         <CardMenu />
         <View className="flex flex-col gap-5">
