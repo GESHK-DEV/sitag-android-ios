@@ -56,7 +56,7 @@ export default function Home() {
           >
             Actividades de Hoy
           </Text>
-          <View className="flex flex-col gap-5 mx-20">
+          <View className="flex flex-col gap-5 ">
             <CardActivity />
             <CardActivity />
             <CardActivity />

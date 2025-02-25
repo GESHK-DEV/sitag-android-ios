@@ -9,11 +9,12 @@ import {
   TouchableOpacity,
 } from "react-native";
 import FillButton from "./UI/button";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 import GradiantButton from "./UI/gradiant-button";
+
 import React, { useState, useRef } from "react";
 import IconsLibrary from "./UI/icons-library";
 import { LinearGradient } from "expo-linear-gradient";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { SvgXml } from "react-native-svg";
 import Location from "../assets/location";
@@ -133,7 +134,7 @@ export function AggCardFarm() {
   return (
     <View>
       <Pressable onPress={() => setModalVisible(!modalVisible)}>
-        <View className="mx-12 rounded-xl py-4 px-6 border-2 overflow-hidden mt-6 border-[#126260]">
+        <View className="mx-12 rounded-xl py-4 px-6 border-2 overflow-hidden mt-6 border-[#126260] drop-shadow">
           <View className="flex flex-col justify-center items-center">
             <IconsLibrary
               IconComponent={MaterialCommunityIcons}
@@ -192,11 +193,12 @@ export function AggCardFarm() {
 
 export function CardActivity() {
   const [expanded, setExpanded] = useState(false);
-  const animatedHeight = useRef(new Animated.Value(100)).current;
+
+  const animatedHeight = useRef(new Animated.Value(75)).current;
 
   const toggleExpand = () => {
     Animated.timing(animatedHeight, {
-      toValue: expanded ? 100 : 250,
+      toValue: expanded ? 75 : 150,
       duration: 300,
       useNativeDriver: false,
     }).start();
@@ -206,31 +208,50 @@ export function CardActivity() {
   return (
     <Pressable onPress={toggleExpand}>
       <Animated.View
-        style={{ height: animatedHeight }}
-        className="mx-12 rounded-xl py-4 px-6 border-2 overflow-hidden border-[#126260]"
+        style={{ height: animatedHeight, ...styles.activityCard }}
+        className="mx-7 rounded-3xl bg-white  px-3  overflow-hidden"
       >
-        <View className="flex flex-row mt-2">
-          <IconsLibrary
-            IconComponent={MaterialCommunityIcons}
-            iconColor="#126260"
-            iconSize={50}
-            iconName="needle"
-          />
+        <View className="flex flex-row justify-between items-center">
+          <View className="flex flex-row gap-5 mt-2">
+            <View className=" bg-[#7CD500] rounded-full p-2 mb-2 mt-1">
+              <IconsLibrary
+                IconComponent={MaterialCommunityIcons}
+                iconColor="#FFFFFF"
+                iconSize={35}
+                iconName="needle"
+              />
+            </View>
+            <View className="flex flex-col ">
+              <Text
+                style={{ fontFamily: "CharlieDisplay-Bold" }}
+                className="text-start text-black text-2xl mt-1 "
+              >
+                Inyecciones
+              </Text>
+              <Text
+                style={{ fontFamily: "CharlieDisplay-Regular" }}
+                className="text-start text-[#6b6b6b] text-lg"
+              >
+                4/10/25
+              </Text>
+            </View>
+          </View>
 
-          <Text
-            style={{ fontFamily: "Roboto_900Black" }}
-            className="text-start text-[#314D4D] text-2xl mt-4 mb-4"
-          >
-            Inyecciones
-          </Text>
+          <IconsLibrary
+            IconComponent={FontAwesome}
+            iconColor="#6A542A"
+            iconSize={30}
+            iconName={expanded ? "chevron-up" : "chevron-down"}
+          />
         </View>
         {expanded && (
-          <View className="mt-2">
-            <Text className="text-[#314D4D]">Categoria:</Text>
-            <Text className="text-[#314D4D] mt-4">
-              Fecha: 30 de Noviembre de 2024
+          <View className="mt-5">
+            <Text
+              style={{ fontFamily: "CharlieDisplay-Bold" }}
+              className="text-start text-black text-lg"
+            >
+              Se vacunaron a todos los animales de la finca de estrella azul
             </Text>
-            <Text className="text-[#314D4D] mt-4">Descripción:</Text>
           </View>
         )}
       </Animated.View>
@@ -679,3 +700,16 @@ export function AggCardAnimal() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  activityCard: {
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 5,
+  },
+});
