@@ -1,0 +1,117 @@
+import { Pressable, Text, View, StyleSheet } from "react-native";
+import { SvgXml } from "react-native-svg";
+import redirect from "../../assets/redirect.js";
+export default function SumaryCard() {
+  return (
+    <View style={styles.card} className="mx-6">
+      <View style={styles.backgroundCircle} />
+      <Text
+        style={[styles.title, { fontFamily: "CharlieDisplay-Bold" }]}
+        className="mt-5 "
+      >
+        Aquí tus Ganancias!
+      </Text>
+      <Text style={[styles.amount, { fontFamily: "CharlieDisplay-Black" }]}>
+        $510.50
+      </Text>
+      <View style={styles.bottomContainer}>
+        <View style={styles.percentageContainer} className="mb-5">
+          <Text
+            style={[
+              styles.percentageText,
+              { fontFamily: "CharlieDisplay-Semibold" },
+            ]}
+          >
+            +7%
+          </Text>
+        </View>
+        <Text
+          style={[styles.comparisonText, { fontFamily: "CharlieDisplay-Bold" }]}
+          className="mb-5"
+        >
+          que el mes pasado
+        </Text>
+      </View>
+    </View>
+  );
+}
+const styles = StyleSheet.create({
+  card: {
+    backgroundColor: "#BFE38D",
+    borderRadius: 24,
+    paddingTop: 5,
+
+    paddingInline: 20,
+
+    position: "relative",
+    overflow: "hidden",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 5,
+  },
+  backgroundCircle: {
+    position: "absolute",
+    right: -50,
+    top: -50,
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    backgroundColor: "#B3D880",
+    opacity: 0.7,
+  },
+  title: {
+    fontSize: 24,
+
+    color: "#2d4436",
+    marginBottom: 8,
+  },
+  amount: {
+    fontSize: 32,
+
+    color: "#2d4436",
+    marginBottom: 16,
+  },
+  bottomContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  percentageContainer: {
+    backgroundColor: "#ffffff",
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 16,
+  },
+  percentageText: {
+    color: "#2d4436",
+
+    fontSize: 20,
+  },
+  comparisonText: {
+    color: "#2d4436",
+    fontSize: 20,
+  },
+});
+
+export function SimpleCard({ text }) {
+  return (
+    <View style={styles.card}>
+      <View style={styles.backgroundCircle} />
+      <View className="flex flex-row justify-end items-center">
+        <SvgXml xml={redirect} />
+      </View>
+
+      <Text
+        className=" text-center text-4xl pt-5 pb-14 text-[#1C5754]"
+        style={{ fontFamily: "CharlieDisplay-Bold" }}
+      >
+        {text}
+      </Text>
+    </View>
+  );
+}

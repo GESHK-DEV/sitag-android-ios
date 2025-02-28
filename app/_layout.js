@@ -1,9 +1,11 @@
-import { Slot, Stack } from "expo-router";
+import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { View, Text } from "react-native";
+import { PaperProvider } from "react-native-paper";
 import { useFonts } from "expo-font";
-import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
-import { ThemeProvider } from "@react-navigation/native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { Drawer } from "expo-router/drawer";
+
 import * as SplashScreen from "expo-splash-screen";
 import "../global.css"; // Asegúrate de que la ruta sea correcta
 import { useEffect } from "react";
@@ -13,18 +15,20 @@ import {
   Roboto_700Bold,
   Roboto_500Medium,
 } from "@expo-google-fonts/roboto";
+import { Jua_400Regular } from "@expo-google-fonts/jua";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function Layout() {
   const [loaded, error] = useFonts({
-    "Charlie-display": require("../assets/fonts/charlie-display.ttf"),
-    "Charlie-display-3": require("../assets/fonts/charlie-display-3.ttf"),
-    "Charlie-display-semibold": require("../assets/fonts/charlie-display-semibold.ttf"),
-    "Charlie-display-bold": require("../assets/fonts/charlie-display-bold.ttf"),
+    "CharlieDisplay-Black": require("../assets/fonts/charlie-display.ttf"),
+    "CharlieDisplay-Regular": require("../assets/fonts/charlie-display-3.ttf"),
+    "CharlieDisplay-Semibold": require("../assets/fonts/charlie-display-semibold.ttf"),
+    "CharlieDisplay-Bold": require("../assets/fonts/charlie-display-bold.ttf"),
     Roboto_900Black,
     Roboto_400Regular,
     Roboto_700Bold,
+    Jua_400Regular,
     Roboto_500Medium,
   });
 
@@ -38,12 +42,47 @@ export default function Layout() {
     return null;
   }
   return (
-    <View style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
+    <PaperProvider>
       <StatusBar style="light" hidden={true} />
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="login" options={{ headerShown: false }} />
-      </Stack>
-    </View>
+      <GestureHandlerRootView style={{ flex: 1, backgroundColor: "#F8672E" }}>
+        <Drawer
+          screenOptions={{
+            headerShown: false, // Oculta el header predeterminado
+            drawerPosition: "right", // Drawer se abre de derecha a izquierda
+          }}
+        >
+          <Drawer.Screen
+            name="index"
+            options={{ drawerLabel: "Home", title: "Overview" }}
+          />
+          <Drawer.Screen
+            name="login"
+            options={{ drawerLabel: "Login", title: "Overview" }}
+          />
+          <Drawer.Screen
+            name="register"
+            options={{ drawerLabel: "register", title: "Overview" }}
+          />
+
+          <Drawer.Screen
+            name="insFarm"
+            options={{ drawerLabel: "Farm", title: "Overview" }}
+          />
+          <Drawer.Screen
+            name="finance"
+            options={{ drawerLabel: "Finance", title: "Overview" }}
+          />
+          <Drawer.Screen
+            name="drugs"
+            options={{ drawerLabel: "Drugs", title: "Overview" }}
+          />
+
+          <Drawer.Screen
+            name="dailyActiv"
+            options={{ drawerLabel: "Activity", title: "Overview" }}
+          />
+        </Drawer>
+      </GestureHandlerRootView>
+    </PaperProvider>
   );
 }

@@ -8,20 +8,6 @@
     "userInterfaceStyle": "light",
     "scheme": "pilot",
 
-    "fonts": [
-      {
-        "asset": "./assets/fonts/charlie-display.ttf"
-      },
-      {
-        "asset": "./assets/fonts/charlie-display-3.ttf"
-      },
-      {
-        "asset": "./assets/fonts/charlie-display-bold.ttf"
-      },
-      {
-        "asset": "./assets/fonts/charlie-display-semibold.ttf"
-      }
-    ],
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
@@ -32,6 +18,7 @@
       "supportsTablet": true
     },
     "android": {
+      "permissions": ["INTERNET"],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
