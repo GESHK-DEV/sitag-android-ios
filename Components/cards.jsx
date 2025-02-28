@@ -8,19 +8,25 @@ import {
   Animated,
   TouchableOpacity,
 } from "react-native";
-import FillButton from "./UI/button";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import GradiantButton from "./UI/gradiant-button";
+//imports de icononos
 
-import React, { useState, useRef } from "react";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 import IconsLibrary from "./UI/icons-library";
-import { LinearGradient } from "expo-linear-gradient";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { SvgXml } from "react-native-svg";
+
+//importes de elementos ui
+
+import FillButton from "./UI/button";
+import GradiantButton from "./UI/gradiant-button";
+import React, { useState, useRef } from "react";
+import { LinearGradient } from "expo-linear-gradient";
 import Location from "../assets/location";
 import animals from "../assets/animals";
 import InputText from "./UI/inputs";
 import { Link } from "expo-router";
+
+
 export default function CardMenu() {
   return (
     <View className="flex flex-col justify-center items-center mt-14 gap-9">
@@ -259,73 +265,6 @@ export function CardActivity() {
   );
 }
 
-export function AggCardActivity() {
-  const [modalVisible, setModalVisible] = useState(false);
-  const closeModal = () => {
-    setModalVisible(false);
-  };
-  return (
-    <View>
-      <Pressable onPress={() => setModalVisible(!modalVisible)}>
-        <View className="mx-12 rounded-xl py-4 px-6 border-2 overflow-hidden mt-6 border-[#126260]">
-          <View className="flex flex-col justify-center items-center">
-            <IconsLibrary
-              IconComponent={MaterialCommunityIcons}
-              iconColor="#126260"
-              iconSize={50}
-              iconName="plus"
-            />
-          </View>
-        </View>
-      </Pressable>
-
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={closeModal}
-      >
-        <View className="flex-1 px-8 py-8 justify-center items-center bg-black/50">
-          <View className="bg-white w-full rounded-lg border-2 border-[#126260]">
-            <Text
-              style={{ fontFamily: "Roboto_900Black" }}
-              className="text-center text-[#314D4D] text-2xl mt-4 mb-4"
-            >
-              Añade una nueva actividad
-            </Text>
-
-            <View className="w-full">
-              <View className="mb-4">
-                <InputText placeholder="Categoria" type="text" />
-              </View>
-              <View className="mb-4">
-                <InputText placeholder="Actividad" type="text" />
-              </View>
-              <View className="mb-4">
-                <InputText placeholder="Fecha" type="text" />
-              </View>
-              <View className="mb-4">
-                <InputText placeholder="Descripción" type="text" />
-              </View>
-            </View>
-
-            <View className="flex flex-row justify-center items-center mr-4">
-              <GradiantButton text="Aceptar" />
-
-              <FillButton
-                text="Cancelar"
-                Bcolor="#6BBF59"
-                textColor="white"
-                textSize="xl"
-                onPress={closeModal}
-              />
-            </View>
-          </View>
-        </View>
-      </Modal>
-    </View>
-  );
-}
 
 export function CardDivisions() {
   return (

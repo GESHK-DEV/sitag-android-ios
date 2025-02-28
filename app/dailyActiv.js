@@ -1,8 +1,7 @@
 import { View, Text, ScrollView } from "react-native";
 import Header from "../Components/header.jsx";
 import { CardActivity } from "../Components/cards.jsx";
-import { AggCardActivity } from "../Components/cards.jsx";
-
+import  AddActivityButton  from "../Components/UI/add-activity-button.jsx";
 export default function DailyAct() {
   return (
     <ScrollView className="bg-white flex-1">
@@ -16,7 +15,7 @@ export default function DailyAct() {
           Añade una nueva actividad
         </Text>
 
-        <AggCardActivity />
+        <AddActivityButton />
 
         <Text
           className="text-start text-[#314D4D] text-2xl ml-12 mt-8 mb-8"
